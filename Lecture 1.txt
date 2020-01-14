@@ -1,0 +1,10 @@
+Abstraction Etymology:-
+* The quality of dealing with ideas rather than events. 
+* Freedom from representational quality in art.
+* A state of preoccupation
+* The process of considering something independently of its associations, attributes or concrete accompaniments.
+* The process of removing something especially water from a river or some other source.
+latin:- Abstrahere, Abstractio(DrawAway)
+Abstraction- Representation with the removal of some level of implementation details.
+*************************************************************************************
+	
