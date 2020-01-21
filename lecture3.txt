@@ -1,0 +1,23 @@
+Lecture 3
+
+Signed Integer Representation
+* Sign bit represented as the
+	left most bit
+	high order bit
+	most significant bit
+* Magnitude(absolute value) is represented the remaining lower order bits.
+Eg:- 4 bits
++3       -3
+*****  ******
+0011 	1011
+
+Casting out 9's
+
+-5:-0101:1010+1:1011(two's Complement)
+-3:-0011:1100+1:1101(two's Complement)
+		****
+		1000		
+ 		-  1
+		****
+		0111
+		1000
