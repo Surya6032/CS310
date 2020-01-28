@@ -1,0 +1,28 @@
+Normalized scientification
+
+3.42x10^5
+
+
+3.42        x   10^5
+----            
+significant
+
+Normalize if the number to the left of decimal point is +/-[1,9]
+
+non normalize
+O maybe the value left of the point
+may have values > 9
+to the left of the point
+
+
+
+IEEE single precision binar floating point
+	32 bits
+	   1 bit sign (:+,1:-)
+           8 bit exponent(biased)
+           23 bits significant(leading is implied)
+IEEE Double precision binary point
+	64 bits
+	   1 bit sign
+	   11 bit exponent
+	   52 bits significant(leading implied)
