@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdio.h>
-#include <string.h>
+#include <string>
+#include <sstream>
+#include <cmath>
 using namespace std;
 
 
@@ -39,23 +41,46 @@ int binaryToDecimal(int n)
     return dec_value; 
 } 
 
+int Base2()
+{ 
+   int number,a,number1;
+   
+   cout<<"Enter binary number:";
+   cin>>number;
+   cout<<number<<endl;
+   cout<<endl;
+   while(number>0)
+        {
+        number1=number/10;
+        a++;
+        }
+   int array[a];
+   for (int i = a; i >= 0; i--)
+  {
+    array[i] = number1 % 10;
+    number1 /= 10;
+    
+   }
+   
+   
+  return number;
+   
+}
 int main()
 {
 
    int n = 17; 
    decimalToBinary(n);
    cout<<endl;
-   int num = 10101001; 
+   int num = Base2(); 
    cout << binaryToDecimal(num) << endl;  
    return 0; 
-
-
+   
 
 
 
 
 }
-
 
 
 
