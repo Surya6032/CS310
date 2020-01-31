@@ -5,49 +5,50 @@
 #include <cmath>
 using namespace std;
 
+const int BINARY=32;
+const int TWO=2;
+const int TEN=10;
 
 
 
-
-void decimalToBinary(int n) 
+void decimalToBinary(int Decimalnumber) 
 { 
     
-    int binaryNum[32]; 
+    int binaryNum[BINARY]; 
     int i = 0; 
-    while (n > 0) {  
-        binaryNum[i] = n % 2; 
-        n = n / 2; 
+    while (Decimalnumber > 0) {  
+        binaryNum[i] = Decimalnumber % TWO; 
+        Decimalnumber = Decimalnumber / TWO; 
         i++; 
     } 
     for (int j = i - 1; j >= 0; j--) 
         cout << binaryNum[j]; 
 } 
-int binaryToDecimal(int n) 
+int binaryToDecimal(int BinaryNumber) 
 { 
-    int num = n; 
-    int dec_value = 0; 
+    int binary = BinaryNumber; 
+    int decimal_value = 0; 
     int base = 1; 
   
-    int temp = num; 
+    int temp = binary; 
     while (temp) { 
-        int last_digit = temp % 10; 
-        temp = temp / 10; 
+        int last_digit = temp % TEN; 
+        temp = temp / TEN; 
   
-        dec_value += last_digit * base; 
+        decimal_value += last_digit * base; 
   
-        base = base * 2; 
+        base = base * TWO; 
     } 
   
-    return dec_value; 
+    return decimal_value; 
 } 
 int Base2()
 { 
    string number;
-   int k=0;
    bool value=true;
-   cout<<"Enter value:"<<endl;
+   cout<<"Enter binary number(1's and 0's only'):"<<endl;
    cin>>number;
-  for (int i=0;i<number.length();i++) 
+   for (int i=0;i<number.length();i++) 
   
         {
 		if(number[i]== '0'||number[i]=='1') 
@@ -55,28 +56,38 @@ int Base2()
 		     value=false;
 		 
 		 }
+		 if(value)
+		{   cout<<"Error occured"<<endl;
+			cout<<"Enter binary number(1's and 0's only'):"<<endl;
+	        cin>>number;
+		  }	 
 		
 	}
-if(value)
-	{
-		cout<<"Enter value:"<<endl;
-        cin>>number;
-		  }	 
-int i=stoi(number);
-return i;
+
+int String_to_Int=stoi(number);
+return String_to_Int;
 	}
  
    
 int main()
 {
 
-   int n; 
-   cout<<"Enter decimal number"<<endl;
-   cin>>n;
-   decimalToBinary(n);
+   int DecimalNumber=0; 
+   do{
+   cout<<"Enter decimal number(Positive decimal number only):"<<endl;
+   cin>>DecimalNumber;
+    }while(DecimalNumber <0);
+   
+   cout<<"Number in binary:";
+   decimalToBinary(DecimalNumber);
    cout<<endl;
-   int num = Base2(); 
-   cout << binaryToDecimal(num) << endl;  
+   cout<<"Decimal Number:"<<DecimalNumber<<endl;
+   cout<<endl;
+   cout<<"******************************************************************"<<endl;  
+   int BinaryNumber = Base2(); 
+   cout <<"Number in Decimal:"<< binaryToDecimal(BinaryNumber) << endl;
+   cout<<"Number in Binary:"<<BinaryNumber<<endl;
+   cout<<"******************************************************************"<<endl;
    return 0; 
    
 
