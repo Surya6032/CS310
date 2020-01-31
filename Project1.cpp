@@ -40,36 +40,39 @@ int binaryToDecimal(int n)
   
     return dec_value; 
 } 
-
 int Base2()
 { 
-   int number,a,number1;
-   
-   cout<<"Enter binary number:";
+   string number;
+   int k=0;
+   bool value=true;
+   cout<<"Enter value:"<<endl;
    cin>>number;
-   cout<<number<<endl;
-   cout<<endl;
-   while(number>0)
+  for (int i=0;i<number.length();i++) 
+  
         {
-        number1=number/10;
-        a++;
-        }
-   int array[a];
-   for (int i = a; i >= 0; i--)
-  {
-    array[i] = number1 % 10;
-    number1 /= 10;
-    
-   }
+		if(number[i]== '0'||number[i]=='1') 
+           { 
+		     value=false;
+		 
+		 }
+		
+	}
+if(value)
+	{
+		cout<<"Enter value:"<<endl;
+        cin>>number;
+		  }	 
+int i=stoi(number);
+return i;
+	}
+ 
    
-   
-  return number;
-   
-}
 int main()
 {
 
-   int n = 17; 
+   int n; 
+   cout<<"Enter decimal number"<<endl;
+   cin>>n;
    decimalToBinary(n);
    cout<<endl;
    int num = Base2(); 
@@ -81,15 +84,3 @@ int main()
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
