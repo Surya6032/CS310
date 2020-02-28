@@ -1,12 +1,11 @@
-# Type your program here
-addi $t5,$zero,8200
-start:    #start of loop
-addi $t1,$zero,8196
-lw $t0,0($t1)
-addi $t2,$zero,8196
-lw $t3,0($t2)
-sub $t4,$t0,$t3
-beq $zero,$t4,Done  #For exiting the loop
-sw $t4,0($t5)   #output value
-j start
-Done:
+addi $t5,$zero,8200    #Initialize $t5 with 8200
+start:                 #start
+addi $t1,$zero,8196    #Initialize $t1 with 8196
+lw $t0,0($t1)          # Load $t0 with DM[8196]
+addi $t2,$zero,8196    #Initialize $t2 with 8196
+lw $t3,0($t2)          # Load $t3 with DM[8196]
+sub $t4,$t0,$t3        #Subtract $t4=$t0-$t3
+beq $zero,$t4,Done     #For exiting the loop
+sw $t4,0($t5)          #output value
+j start                #Jumps to Start
+Done:                                     
