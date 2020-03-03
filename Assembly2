@@ -1,21 +1,24 @@
-# Type your program here
-addi $t0,$zero,8200
-
-start:
-addi $t1,$zero,8196
-lw $t2,0($t1)
-addi $t3,$zero,8196
-lw $t4,0($t3)
-sub $t5,$t2,$t4
-addi $t1,$zero,1
-slt $t6,$t2,$t4
-beq $t6,$zero,ahead
-ahead:
-add $t1,$t1,$t1
-sub $t5,$t5,$t4
-slt $t6,$t5,$t4
-beq $t6,$zero,ahead
-sw $t1,0($t0)
-sw $t5,0($t0)          #output value
-j start 
-
+#Programmed By:- Surya Singh
+#Course:-310
+#Project 3
+#Description:-Program to perform integer division and modulo arithmetic.
+addi $t0,$zero,8200       #Initialize $t5 with 8200
+Start:
+addi $t1,$zero,8196       #Initialize $t1 with 8196
+lw $t2,0($t1)             # Load $t0 with DM[8196]
+addi $t3,$zero,8196       #Initialize $t3 with 8196
+lw $t4,0($t3)             # Load $t0 with DM[8196]
+sub $t5,$t2,$t4           #Subtracting $t4 from $t2 
+beq $zero,$t5,Done
+addi $t1,$zero,1          #Constant
+slt $t6,$t2,$t4           #Checking if $t2 is less than $t4 or not
+beq $t6,$zero,Ahead       #if slt is zero than it moves to ahead
+Ahead:
+addi $t1,$t1,1            #Incrementing the constant
+sub $t5,$t5,$t4           #Subtracting $t4 from $t5
+slt $t6,$t5,$t4           #Checking if $t5 is less than $t4 or not
+beq $t6,$zero,Ahead       #if slt is zero than it moves to ahead
+sw $t1,0($t0)             #Output Quotient
+sw $t5,0($t0)             #Output Remainder
+j Start                   #Jumps to Start
+Done:
