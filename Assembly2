@@ -7,11 +7,15 @@ lw $t2,0($t1)
 addi $t3,$zero,8196
 lw $t4,0($t3)
 sub $t5,$t2,$t4
+addi $t1,$zero,1
 slt $t6,$t2,$t4
 beq $t6,$zero,ahead
 ahead:
+add $t1,$t1,$t1
 sub $t5,$t5,$t4
 slt $t6,$t5,$t4
 beq $t6,$zero,ahead
+sw $t1,0($t0)
 sw $t5,0($t0)          #output value
 j start 
+
