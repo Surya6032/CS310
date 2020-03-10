@@ -1,3 +1,5 @@
 Program Counter:-PC is used by the control unit to locate the next instruction to be executed.
                  Register that holds the address of the next instruction to be executed.
 Logically sequential instructions are stored sequentially in memory.
+jal JLabel:-
+Jump+link:-Stores the address of the next instruction in register $ra, and continuous execution with the instruction at JLabel.
