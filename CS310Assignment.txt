@@ -1,0 +1,33 @@
+1)
+#Without the simulator
+addi $t5,$zero,5
+addi $t2,$zero,10
+add $t6,$t2,$t3
+sw $t6,5004                    #Error in this statement
+
+2)
+#after debugging
+
+addi $t0,$zero,5004            #Added this line so that the result can be stored at 5004
+addi $t5,$zero,5
+addi $t2,$zero,10
+add $t6,$t2,$t3
+sw $t6,0($t0)
+
+3)
+#machine Instruction
+Assembly                         Machine
+addi $t0,$zero,5004             001000 00000 01000 0001001110001100
+addi $t5,$zero,5		001000 00000 01101 0000000000000101
+addi $t2,$zero,10		001000 00000 01010 0000000000001010
+add $t6,$t2,$t3			000000 01010 01011 01110 00000 100000	
+sw $t6,0($t0)                   101011 01000 01110 0000000000000000
+
+4)
+There is no changes from delivery 3
+
+001000 00000 01000 0001001110001100
+001000 00000 01101 0000000000000101
+001000 00000 01010 0000000000001010
+000000 01010 01011 01110 00000 100000
+101011 01000 01110 0000000000000000 
